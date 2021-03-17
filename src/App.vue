@@ -1,7 +1,15 @@
 <template>
 
   <div id="app">
-    <index-banner msg="White Space"/>
+
+    <div class="bgImg">
+        <div class="headInfo">
+          <index-header></index-header>
+          <index-info></index-info>
+          <contact-info></contact-info>
+        </div>
+    </div>
+    
   </div>
 
 </template>
@@ -9,12 +17,18 @@
 
 <script>
 
-import indexBanner from './components/banner.vue'
+// Components
+import indexHeader from './components/header.vue'
+import indexInfo   from './components/headerInfo.vue'
+import contactInfo from './components/contactInfo.vue'
 
 export default {
   name: 'App',
   components: {
-    indexBanner
+    indexHeader,
+    indexInfo,
+    contactInfo
+
   }
 }
 
@@ -22,15 +36,13 @@ export default {
 
 
 <style>
+/* SCSS */
+@import "../css/main.min.css";
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: white;
-  margin-top: 60px;
-  border: 1px solid pink;
+  margin: 0 auto;
+  background-color: lightgrey;
+  /* border: 1px solid pink; */
 }
 
 </style>
