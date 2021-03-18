@@ -9,7 +9,16 @@
           <contact-info></contact-info>
         </div>
     </div>
-    
+
+    <div class="content">
+      <room-block></room-block>
+      <room-block></room-block>
+      <room-block></room-block>
+      <room-block></room-block>
+      <room-block></room-block>
+      <room-block></room-block>
+    </div>
+
   </div>
 
 </template>
@@ -21,13 +30,15 @@
 import indexHeader from './components/header.vue'
 import indexInfo   from './components/headerInfo.vue'
 import contactInfo from './components/contactInfo.vue'
+import roomBlock   from './components/roomBlock.vue'
 
 export default {
   name: 'App',
   components: {
     indexHeader,
     indexInfo,
-    contactInfo
+    contactInfo,
+    roomBlock
 
   }
 }
@@ -41,7 +52,7 @@ export default {
 
 #app {
   margin: 0 auto;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
   /* border: 1px solid pink; */
 }
 
