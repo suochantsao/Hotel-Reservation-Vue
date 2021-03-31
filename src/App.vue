@@ -40,6 +40,29 @@ export default {
     contactInfo,
     roomBlock
 
+  },
+  data(){
+    return{
+      eachRoomInfo : []
+    }
+  },
+  created(){
+    console.log('John Doe');
+    console.log('MDFK');
+
+    const allRoomsAPI = 'https://challenge.thef2e.com/api/thef2e2019/stage6/rooms';
+    const token       = 'FYB131amsK8xaJqG19oUZV0ZSezrgUYo6oaNU3dCGQLmkYeLZtPiY0wVj3Np';
+    const config      = { headers: { Authorization: `Bearer ${token}` } };
+    const that        = this;
+
+    this.$http
+      .get(allRoomsAPI, config)
+      .then( res =>{
+        that._data.eachRoominfo = res.data.items;
+        console.log(that._data.eachRoominfo);
+      })
+      .catch( err => {console.log(err)});
+
   }
 }
 
