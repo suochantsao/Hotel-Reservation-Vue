@@ -6,12 +6,12 @@ Vue.use(VueRouter)
 
 const routes = [
     {
-        path: '/haha',
+        path: '/home',
         name: 'WhiteSpace',
         component: home
     },
     {
-        path: '/',
+        path: '/:id',
         name: 'RoomInfo',
         component: info
     }

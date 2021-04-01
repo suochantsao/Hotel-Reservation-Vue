@@ -1,0 +1,438 @@
+.info_logo{
+    position: absolute;
+    top: 5%;
+    left: 7%;
+}
+.pictureBlock{
+    display: flex;
+    width: 100%;
+    box-shadow: 2px 2px 9px 0px lightgrey;
+
+    .room_picture{
+        background-size: cover;
+        background-position: center;
+    }
+
+    .detail_pic1{
+        width: 100%;
+        height: 596px;
+    }
+
+    .s_pic{
+        width: 38%;
+
+        .detail_pic2{
+            width: 100%;
+            height: 298px;
+        }
+        .detail_pic3{
+            width: 100%;
+            height: 298px;
+        }
+    
+    }
+}
+.room_content{
+    display: flex;
+    margin: 2% auto;
+    // border: 1px solid pink;
+
+    .room_detail{
+        // margin-left: 8%;
+        margin: 0 auto;
+        width: 40%;
+        font-family: NotoSansCJKtc-Light;
+        // border: 1px solid black;
+
+        h2{
+            font-family: NotoSansCJKtc-Medium;
+            
+        }
+        li{
+            line-height: 2rem;  
+            letter-spacing: 1.46px;  
+        }
+        .room_title{
+            line-height: 7rem;
+            font-size: 3rem;
+        }
+        .en_roominfo{
+            line-height: 1.5rem;
+            margin-top: 4%;
+            letter-spacing: 1.25px;
+            text-align: justify;
+        }
+
+        .checkInBlock{
+            margin-top: 10%;
+            display: flex;
+            flex-wrap: wrap;
+
+            .checkTitle{
+                width: 50%;
+            }
+            .timeStyle{
+                width: 50%;
+                font-size: 1.5rem;
+                letter-spacing: 4px;
+
+            }
+        }
+        .amenitiesBlock{
+            margin: 12% 0;
+            background-color: $grey;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 3% 0;
+    
+            img{
+                width: 30px;
+                height: 30px;
+                // border: black 1px solid;
+
+            }
+    
+            .iconBlock{
+                width: 25%;
+                margin: 2% 0 2% 7%;
+                display: flex;
+                // border: 1px solid black;
+    
+                .iconString{
+                    margin-left: 10%;
+                    font-size: 12px;
+                }
+            }
+            .grey{
+                color: lightgrey;
+                position: relative;
+                left: -1000px;
+                filter: drop-shadow(lightgrey 1000px 0);
+            }
+    
+    
+        }
+
+    }
+
+    .room_price{
+        margin-top: 3%;
+        font-family: NotoSansCJKtc-DemiLight;
+        text-align: right;
+        // border: 1px solid black;
+        
+        .priceTitle{
+            font-size: 2rem;
+            letter-spacing: 3.13px;
+            line-height: 3rem;
+        }
+        .dateString{
+            color: $dark_grey;
+            letter-spacing: 1.46px;
+        }
+        .priceString{
+            letter-spacing: 1.67px;
+            line-height: 27px;
+            margin: 12% 0 3% 0;
+        }
+    }
+
+    .calendarBlock{
+        margin: 2% auto 0 4%;
+        // border: 1px solid pink;
+
+        .calendar{
+            width: 338px;
+            height: 338px;
+            background-color: $light_grey;
+            box-shadow: 2px 2px 9px 0px lightgrey;
+            padding-left: 8%;
+            pointer-events: none;
+
+            input{
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+        .reserveBtn{
+            width: 118px;
+            height: 53px;
+            margin-top: 8%;
+            background-color: $btn_grey;
+            display: inline-block;
+            cursor: pointer;
+
+            span{
+                color: white;
+                display: inline-block;
+                text-align: center;
+                margin: 15% 22%;
+                cursor: pointer;
+            }
+        }
+        .delAllBtn{
+            margin-left: 7%;
+        }
+    }
+}
+
+
+// Loader
+.loader {
+    display: flex;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    align-items: center;
+}
+
+.hidden {
+    animation: fadeOut 0.3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+  
+.duo {
+    height: 20px;
+    width: 50px;
+    background: hsla(0, 0%, 0%, 0.0);
+    position: absolute;
+    margin-left: 46%;
+
+    .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background: #333;
+        position: absolute;
+    }
+      
+    .dot-a {
+        left: 0px;  
+    }
+      
+    .dot-b {
+        right: 0px;
+    }
+
+}
+  
+.duo, .dot {
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+  
+.duo1 {
+    left: 0;
+    animation-name: spin;
+
+    .dot-a {
+        opacity: 0;
+        animation-name: onOff;
+        animation-direction: reverse;
+    }
+}
+  
+.duo2 {
+    left: 30px;
+    animation-name: spin;
+    animation-direction: reverse;
+
+    .dot-b {
+        animation-name: onOff;
+    }
+}
+  
+@keyframes spin {
+      0% { transform: rotate(0deg) }
+     50% { transform: rotate(180deg) }
+    100% { transform: rotate(180deg) }
+}
+  
+@keyframes onOff {
+      0% { opacity: 0; }
+     49% { opacity: 0; }
+     50% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut{
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+}
+
+// Dialog Box
+.dialogStyle{
+    display: flex;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    
+    .dialogBox{
+        opacity: 1;
+        width: 423px;
+        height: 485px;
+        margin-left: 36%;
+        background-color: white;
+        font-family: NotoSansCJKtc-Medium;
+        
+        h3{
+            font-size: 24px;
+            padding: 9% 0 11% 9%;
+            letter-spacing: 2.51px;
+        }
+    
+        li{
+            list-style: none;
+            padding-left: 9%;
+            letter-spacing: 1.46px;
+    
+            .inputStyle{
+                padding-left: 3%;
+                height: 2em;
+                outline: none;
+                margin-bottom: 4%;
+                border-radius: 5px;
+                border: 1px solid $input_grey;
+    
+            }
+            .basicInput{
+                width: 243px;
+                margin-left: 15%;
+            }
+            .dateInput{
+                width: 91px;
+                margin: 0 3.5% 0 4.5%; 
+            }
+    
+        }
+    
+        .countArea{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 8% 0 3% 0;
+            background-color: $dialog_grey;
+    
+            li{
+                width: 35.5%;
+                font-size: 12px;
+                color: $dark_grey;
+                line-height: 1.5em;
+                letter-spacing: 1.25px;
+    
+            }
+            .normalDays{
+                margin-top: 5%;
+            }
+            .holidays{
+                margin-bottom: 5%;
+            }
+            .daysCount{
+                text-align: right;
+                margin-right: 6%;
+            }
+    
+        }
+        .priceArea{
+            font-size: 26px;
+            margin-right: 10%;
+            color: $font_red;
+            text-align: right;
+            letter-spacing: 2.72px;
+    
+            span{
+                display: inline-block;
+                margin-left: 8%;
+            }
+        }
+        
+        .btnBlock{
+            display: flex;
+            
+            .btnStyle{
+                height: 37px;
+                font-size: 14px;
+                margin-top: 8%;
+                cursor: pointer;
+    
+            }
+            .cancleBtn{
+                padding: 0;
+                width: 78px;
+                margin-left: 9%;
+                color: $dark_grey;
+                background-color: $dialog_grey;
+        
+                span{
+                    margin: 14% 0 0 28%;
+                    display: inline-block;
+                }
+            }
+    
+            .confirmBtn{
+                color: white;
+                margin-left: 38%;
+                width: 107px;
+                padding: 0;
+                background-color: $confirm_grey;
+    
+                span{
+                    margin: 10% 0 0 22%;
+                    display: inline-block;
+    
+                }
+            }
+
+            .backPageBtn{
+                width: 85px;
+                margin: 6% 0 0 70%;
+
+                span{
+                    margin: 13% 0 0 22%;
+                    display: inline-block;
+                }
+
+            }
+
+            .failBackBtn{
+                width: 80px;
+                margin: 15% 0 0 72%;
+
+                span{
+                    margin: 13% 0 0 30%;
+                    display: inline-block;
+                }
+            }
+        }
+        
+    }
+    .confirmBox{
+        height: 260px;
+
+        .checkCircle{
+            background-image: url(/src/assets/icon/tick-inside-circle.svg);
+            background-size: cover;
+            background-position: center;
+            width: 5%;
+            height: 58px;
+            margin-left: 40%;
+        }
+    }
+    
+}
+.dialogNone{
+    display: none;
+}

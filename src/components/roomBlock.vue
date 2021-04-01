@@ -2,7 +2,7 @@
 
     <div class="content">
         <ul class="roomItem" v-for="item in eachRoomInfo" :key="item.name"> 
-            <router-link to="/info">
+            <router-link :to="{path:'/'+item.id}">
                 <li class="roomPicture" :id="item.id" :style="{'background-image': 'url('+item.imageUrl+')'}"></li>
                 <li class="roomDescribe" :id="item.id">{{item.name}}</li>
             </router-link>
@@ -16,11 +16,12 @@
 
 export default {
     name: 'roomBlock',
-    methods: {
-        test(){
-            console.log(this);
-        }
-    },
+    // props: {
+    //     id: {
+    //         type: String,
+    //         required: true
+    //     }
+    // },
     data(){
         return{
             "eachRoomInfo": [],
