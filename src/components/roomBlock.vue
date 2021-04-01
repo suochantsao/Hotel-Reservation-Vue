@@ -1,9 +1,11 @@
 <template>
 
     <div class="content">
-        <ul class="roomItem" v-for="item in eachRoomInfo" :key="item.name">
-            <li class="roomPicture" :id="item.id" :style="{'background-image': 'url('+item.imageUrl+')'}"></li>
-            <li class="roomDescribe" :id="item.id">{{item.name}}</li>
+        <ul class="roomItem" v-for="item in eachRoomInfo" :key="item.name"> 
+            <router-link to="/info">
+                <li class="roomPicture" :id="item.id" :style="{'background-image': 'url('+item.imageUrl+')'}"></li>
+                <li class="roomDescribe" :id="item.id">{{item.name}}</li>
+            </router-link>
         </ul>
     </div>
 
@@ -11,7 +13,6 @@
 
 
 <script>
-// import App from '../App.vue'
 
 export default {
     name: 'roomBlock',
@@ -23,7 +24,6 @@ export default {
     data(){
         return{
             "eachRoomInfo": [],
-            // "eachRoomPic": []
         }
     },
     created(){
