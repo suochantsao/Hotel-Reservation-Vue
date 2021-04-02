@@ -33,15 +33,14 @@ export default {
         const allRoomsAPI = 'https://challenge.thef2e.com/api/thef2e2019/stage6/rooms';
         const token       = 'FYB131amsK8xaJqG19oUZV0ZSezrgUYo6oaNU3dCGQLmkYeLZtPiY0wVj3Np';
         const config      = { headers: { Authorization: `Bearer ${token}` } };
-        const that        = this;
 
         this.$http
         .get(allRoomsAPI, config)
         .then( res =>{
-            that.eachRoomInfo = res.data.items;
+            this.eachRoomInfo = res.data.items;
             // that.eachRoomPic  = res.data.items;
             console.log(res);
-            console.log(that.eachRoomInfo);
+            console.log(this.eachRoomInfo);
         })
         .catch( err => {console.log(err)});
 
