@@ -7,7 +7,14 @@
 
         <div class="room_content">
             <room-detail :api-roominfo="roomInfo"></room-detail>
+            <room-price :api-roominfo="roomInfo"></room-price>
+            <calendar-block ></calendar-block>
         </div>
+
+        <loader :apiRoominfo="roomInfo"></loader>
+
+        <dialog-block></dialog-block>
+
     </div>
 </template>
 
@@ -16,6 +23,10 @@
 import infoHeader from '../components/roomHeader.vue'
 import RoomPicNav from '../components/roomPicNav.vue'
 import RoomDetail from '../components/roomDetail.vue'
+import RoomPrice from '../components/roomPrice.vue'
+import CalendarBlock from '../components/calendarBlock.vue'
+import Loader from '../components/loader.vue'
+import dialogBlock from '../components/dialogBlock.vue'
 
 
 export default {
@@ -24,10 +35,14 @@ export default {
         infoHeader,
         RoomPicNav,
         RoomDetail,
+        RoomPrice,
+        CalendarBlock,
+        Loader,
+        dialogBlock
     },
     data(){
         return{
-            "roomInfo": {}
+            "roomInfo": {},
         }
     },
     created(){
