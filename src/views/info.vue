@@ -1,19 +1,19 @@
 <template>
     <div id="app">
-        <header>
+        <header @click="test">
             <info-header></info-header>
             <room-pic-nav :api-roominfo="roomInfo" ></room-pic-nav>
         </header>
 
         <div class="room_content">
             <room-detail :api-roominfo="roomInfo"></room-detail>
-            <room-price :api-roominfo="roomInfo"></room-price>
-            <calendar-block ></calendar-block>
+            <room-price  :api-roominfo="roomInfo"></room-price>
+            <calendar-block @classbool="addClass"></calendar-block>
         </div>
 
         <loader :apiRoominfo="roomInfo"></loader>
 
-        <dialog-block></dialog-block>
+        <dialog-block :dialogBool="dialogClass"></dialog-block>
 
     </div>
 </template>
@@ -40,9 +40,18 @@ export default {
         Loader,
         dialogBlock
     },
+    methods:{
+        addClass(dialogBool){
+            this.dialogClass = dialogBool;
+        },
+        test(){
+            console.log(this);
+        }
+    },
     data(){
         return{
             "roomInfo": {},
+            "dialogClass": {}
         }
     },
     created(){
@@ -63,7 +72,7 @@ export default {
           })
           .catch(console.error());
 
-
+        console.log(this);
     }
 }
 </script>

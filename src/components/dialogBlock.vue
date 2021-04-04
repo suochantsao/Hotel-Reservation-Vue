@@ -1,5 +1,5 @@
 <template>
-    <div class="dialogBlock" :class="renderObj">
+    <div class="dialogBlock dialogStyle" :class="{ 'dialogNone': classBool}">
         <div class="dialogBox">
 
             <h3 class="dialogTitle">預約時段</h3>  
@@ -10,28 +10,36 @@
                 <input type="text" id='endDate' class="dateInput inputStyle" value="">
             </li>
 
-            <div class="countArea"></div>
-
-            <li class="priceArea"></li>
-
-            <div class="btnBlock">
-                <li class="cancleBtn btnStyle"><span class="cancleSpan">取消</span></li>
-                <li class="confirmBtn btnStyle"><span>確定預約</span></li>    
-            </div>
+            <days-count></days-count>
+            <price-block></price-block>
+            <btn-block></btn-block>
 
         </div>
     </div>
 </template>
 
 <script>
+import BtnBlock from './btnBlock.vue'
+import daysCount from './daysCount.vue'
+import PriceBlock from './priceBlock.vue'
+
 export default {
     name:"dialogBlock",
+    props:['dialogBool'],
+    components: { 
+        daysCount,
+        PriceBlock,
+        BtnBlock 
+    },
     data(){
         return{
-            renderObj:{
-                'dialogStyle': false,
-                'dialogNone': false
-            }
+            'classBool':{}
+
+        }
+    },
+    watch:{
+        dialogBool(){
+            this.classBool = !this.dialogBool
         }
     }
 }

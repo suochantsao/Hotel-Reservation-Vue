@@ -21,8 +21,8 @@ export default {
     methods:{
         dialogRender(){
             this.dialogBool = true;
-            console.log(this);
-            console.log('John Doe');
+            // console.log(this);
+            this.$emit('classbool',this.dialogBool);
 
         },
         haha(){
